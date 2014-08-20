@@ -1,75 +1,39 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Wesley Kerr</title>
+---
+layout: default
+title: Home
+---
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Wesley Kerr</h1>
-        <p>Software Engineer<br>Google<br>wesley [dot] n [dot] kerr [at] gmail [dot] com</p>
+<section class="archive">
+{% for post in site.posts %}
+{% unless post.next %}
 
-       
-        <p><img src="images/wesleykerr.png" alt="Wesley Kerr" height="300px" align="left"></p>        
-        <p class="view">
-          <strong>Personal</strong><br>
-          <a href="http://www.mendeley.com/profiles/wesley-kerr1/">Publications</a><br>
-          <a href="http://scholar.google.com/citations?user=dwpmxegAAAAJ">Google Scholar</a><br>
-          <a href="https://github.com/wesleykerr">GitHub Profile</a><br>
-          <strong>Research</strong><br>
-          <a href="http://code.google.com/p/ua-time-series/">UA Time Series</a><br>
-          <a href="http://www.wubble-world.com/">Wubble World</a><br>
-          <a href="http://code.google.com/p/wubbleworld2d/">Wubble World 2D</a><br>
-          <a href="swarm.html">Swarm Research</a><br>
-        </p>
-        <p>
-          <a href="http://www.facebook.com/wesley.n.kerr"><img src="images/icon-facebook.png" height="48px"></a>
-          <a href="http://plus.google.com/102994505021058044238"><img src="images/icon-google.png" height="48px"></a> 
-          <a href="http://www.linkedin.com/in/wesleykerr"><img src="images/icon-linkedin.png" height="48px"></a> 
-          <a href="https://twitter.com/seekerr"><img src="images/icon-twitter.png" height="48px"></a> 
-        </p>
-      </header>
-      <section>
+{% unless forloop.first %}</div></div>{% endunless %}
 
-<h2>Game Development</h2>
+  <div class="bundle row gutters fadeInDown animated">
+    <h2 class="post-year col span_2">{{ post.date | date: '%Y' }}</h2>
+    <div class="posts-by-year col span_10">
 
-<p>I currently work for Google in the Machine Intelligence group.  Previously, I worked for Riot Games as part of the Insights group.  We were responsible for helping find insights from data (large and small).  I love game development and continue building small games in my free time.  I am currently working on a game inspired by iTanks.  <a href="games/itanks/MonkeyGame.html">iTanks</a> is a game made at the first UW-Stout 48 hour game jam by Ryan Appel, Tegan Moersfelder, and myself.  Once I make further progress on the game, I plan to upload screenshots and playable builds.  The game is written in Java using the <a href="www.libgdx.com">libGDX</a> game development framework.</p>
+{% else %}
+{% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+{% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+{% if year != nyear %}
 
+{% unless forloop.first %}</div></div>{% endunless %}
 
-<h2>Research Interests</h2>
+  <div class="bundle row gutters fadeInDown animated">
+    <h2 class="post-year col span_2">{{ post.date | date: '%Y' }}</h2>
+    <div class="posts-by-year col span_10">
+{% endif %}
+{% endunless %}
 
-<p>I am currently working in Machine Intelligence at Google and have previously worked building large scale recommender systems for Riot Games and for Adknowledge Inc.  One of my fun side projects that I work on to experiment with the latest tools and technologies is the <a href="http://www.steamrecommender.com">Steam Recommender</a> website.</p>
-
-<p>Most of my research lies at the intersection of Machine Learning, Artificial Intelligence and Cognitive Science. My dissertation research explored a developmental approach to activity recognition, laying the foundations for verb learning in a situated environment. A large portion of the research was based on data gathered from the Wubble World and Wubble World 2D virtual environments. Wubble World is an interactive world for 10-12 year olds, wherein children interact with each other and their pet wubble. These interactions provide learning experiences for the wubble and over time children can see their wubble learning more and more language. Wubble World 2D followed the Wubble World project and focused on developing an environment that afforded more autonomous behaviors for the wubbles and yielded more extensive data collection.</p>
-
-<p>In my free time, I play tabletop wargames and develop / think about war simulations.  Work is always slowly progressing on a war simulation game that captures the physics of ancient battlefields abstractly and accurately. The tactics needed to successfully operate in this environment should be those outlined in Clausewitz's classic "On War".</p>
-
-<p>As a professor, I am interested in all aspects of video game design and research. There are many research projects that fall into these categories. Previously, I worked with undergraduate students developing AI for Starcraft.  I also work with students in independent studies designing and implementing new video games that flesh out potentially new game mechanics.</p>
-
-<p>I am also interested in different forms of swarm intelligence and multiagent systems. The idea that complex interactions can arise from simple rules has always intrigued me.</p>
-
-<h2>Education</h2>
-
-<ul>
-<li>PhD in Computer Science, 2010, University of Arizona, Tucson AZ</li>
-<li>MS in Computer Science, 2005, University of Wyoming, Laramie WY</li>
-<li>BS in Computer Science, 2001, Kansas State University, Manhattan KS</li>
-</ul>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+  <article class="row gutters">
+    <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}" class="col span_8">{{ post.title }}</a>
+    <div class="post-date col span_4">
+      <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B" }}</time>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
-</html>
+  </article>
+
+{% if forloop.last %}</div></div>{% endif %}
+
+{% endfor %}
+</section>
