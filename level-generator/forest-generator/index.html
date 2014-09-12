@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+       <head>
+              <title>level-generator</title>
+              <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+              <link href="styles.css" rel="stylesheet" type="text/css">
+              <script src="soundmanager2-setup.js"></script>
+  			  <script src="soundmanager2-jsmin.js"></script>
+       </head>
+
+       <body>
+        <div align="left" id="embed-html"></div>
+        <script type="text/javascript" src="html/html.nocache.js"></script>
+
+        <h3>Level Generator</h3>
+        <ul>
+          <li><strong>g</strong> - Generate a new level.</li>
+          <li><strong>i</strong> - Initialize a new level.</li>
+          <li><strong>1</strong> - Run one step of phase one.</li>
+          <li><strong>2</strong> - Run one step of phase two.</li>
+        </ul>
+       </body>
+
+       <script>
+              function handleMouseDown(evt) {
+                evt.preventDefault();
+                evt.stopPropagation();
+                evt.target.style.cursor = 'default';
+              }
+
+              function handleMouseUp(evt) {
+                evt.preventDefault();
+                evt.stopPropagation();
+                evt.target.style.cursor = '';
+              }
+              document.getElementById('embed-html').addEventListener('mousedown', handleMouseDown, false);
+              document.getElementById('embed-html').addEventListener('mouseup', handleMouseUp, false);
+       </script>
+</html>
