@@ -1,13 +1,73 @@
-markdown: redcarpet
-highlighter: null
-permalink: /:title
+title:        The ramblings of Wesley Kerr
+description:  My corner of the internet where I talk about game development and machine learning.
+disqus_shortname: hpstrtheme
+reading_time:     false
+words_per_minute: 200
+share:            true
 
+# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
+# When testing locally leave blank or use http://localhost:4000
 url:
-baseurl:
 
-redcarpet:
-  extensions: [strikethrough, tables]
 
+# Owner/author information
+owner:
+  name:           Wesley Kerr
+  avatar:         wesleykerr.png
+  bio:            "Software Engineer working at Google, specializing in machine learning, recommender systems and game development."
+  email:          wesley.n.kerr@gmail.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        seekerr
+  facebook:       wesley.n.kerr
+  github:         wesleykerr
+  stackexchange:
+  linkedin:       wesleykerr
+  instagram:
+  flickr:
+  tumblr:
+  # google plus id, include the '+', eg +mmistakes
+  google_plus:    +WesleyKerrKS
+
+
+# Background image to be tiled on all pages
+background:
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:
+google_verify:
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    America/Los_Angeles
+future:      true
+highlighter: pygments
+markdown:    kramdown
+gems:
+  - jekyll-sitemap
 sass:
-  sass_dir: public/css
-  style: :compressed
+  sass_dir: _sass
+  style: compressed
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+# Amount of post to show on home page
+paginate: 5
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: true
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

@@ -1,17 +1,23 @@
 ---
 layout: page
 title: About
+image:
+  feature: abstract-5.jpg
+  credit: dargadgetz
+  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
+comments: false
+modified: 2014-12-24
 ---
 
 <center>
 <a href="http://www.linkedin.com/in/wesleykerr">
-  <img src="{{ site.url }}/images/icon-linkedin.png"></a> 
+  <img src="{{ site.url }}/images/icon-linkedin.png"></a>
 <a href="http://plus.google.com/102994505021058044238">
-  <img src="{{ site.url }}/images/icon-google.png"></a> 
+  <img src="{{ site.url }}/images/icon-google.png"></a>
 <a href="http://www.facebook.com/wesley.n.kerr">
-  <img src="{{ site.url }}/images/icon-facebook.png"></a> 
+  <img src="{{ site.url }}/images/icon-facebook.png"></a>
 <a href="https://twitter.com/seekerr">
-  <img src="{{ site.url }}/images/icon-twitter.png"></a> 
+  <img src="{{ site.url }}/images/icon-twitter.png"></a>
 </center>
 
 I currently work for [Google](http://www.google.com) in the Machine
@@ -62,4 +68,3 @@ while I was a professor at the University of Wisconsin-Stout.
 - PhD in Computer Science, 2010, University of Arizona, Tucson AZ
 - MS in Computer Science, 2005, University of Wyoming, Laramie WY
 - BS in Computer Science, 2001, Kansas State University, Manhattan KS
-
