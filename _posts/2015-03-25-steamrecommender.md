@@ -1,6 +1,9 @@
 ---
 title: Steam Recommender
 layout: post
+description: "Discussion of the technology behind steamrecommender.com."
+modified: 2015-03-26
+tags: [blog, recommender]
 ---
 
 ## Steam Recommender
@@ -220,7 +223,7 @@ time, Steam sales were how I would decide what to play next because I would
 often purchase whatever was on sale. Given my background in recommender
 systems I thought that there had to be a better way. Now the site has become
 a fun toy for me to think about different recommender challenges and
-sometimes discover new games to play. 
+sometimes discover new games to play.
 
 Now that this post is finished, I will begin work on the matrix
 factorization blog post where I discuss computing game embeddings and using
